@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { GlobalNav } from "@/components/nav/new-global-nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <GlobalNav/> */}
+        <GlobalNav/>
+        <div className="lg:pl-72">
+          <div className="max-w-4xl px-2 pt-20 mx-auto space-y-8 lg:px-8 lg:py-8">
+            <div className="p-px rounded-lg shadow-lg bg-vc-border-gradient shadow-black/20">
+              <div className="bg-white rounded-lg">
+                유씨왁스
+              </div>
+            </div>
+            <div className="p-px rounded-lg shadow-lg bg-vc-border-gradient shadow-black/20">
+              <div className="rounded-lg bg-white p-3.5 lg:p-6">
+                {children}
+              </div>
+            </div>
+          </div>
+        </div>
+        </body>
     </html>
   );
 }
